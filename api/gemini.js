@@ -13,7 +13,10 @@ export default async function handler(req, res) {
     };
 
     // NOTE: ganti model kalau perlu. Pastikan model tersedia di project key-mu.
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+    const model = "gemini-1.5-flash";
+    const endpoint =
+  `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
 
     const r = await fetch(endpoint, {
       method: 'POST',
